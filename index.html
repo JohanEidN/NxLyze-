@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NxLyze</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Nxlyze</a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href ="#sec" id="btn">Explore</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Parallax Scrolling Effects</h2>
+            <p>Step 1: Code the Website<br>You'll need a text editor like VSCode, Sublime Text, or Atom for coding. 
+            Create a new folder named my_website and inside it, create these three files:<br>
+            1. index.html - This is your main HTML file.<br>
+            2. style.css - This is where you'll put your styling rules.<br>
+            3. script.js - This will contain your JavaScript code.<br><br>
+            Step 2: Test Locally<br>
+            Before deploying, it's good to test the website locally. 
+            Simply open the index.html file with a web browser. 
+            You should see your web page.<br><br>
+            Step 3: Upload to a Web Server<br>
+            Before your domain can display your website, you need to upload the website files to a web server. 
+            This can be done via FTP (File Transfer Protocol) using software like FileZilla.<br>
+            1. Sign up for web hosting if you haven't. 
+            GoDaddy also offers hosting, or you could choose another provider.<br>
+            2. Connect to your web server using FileZilla and upload the my_website 
+            folder to the public root directory (usually named public_html or www).<br><br>
+            Step 4: Link Domain to Web Server<br>
+            Now, you'll point your GoDaddy domain to the web server where your website is hosted.<br>
+            1. Log in to your GoDaddy account.<br>
+            2. Go to your domain settings.<br>
+            3. Look for the DNS settings or Domain Management area.<br>
+            4. Change the A Record to point to your web hosting server's IP address. 
+            This IP will be provided by your hosting provider.<br>
+            5. Save changes and wait for them to propagate. 
+            This can take from a few minutes to 48 hours.<br><br>
+            Now, when someone enters your domain name into a web browser, 
+            it should display the website you just created.<br><br>
+            Given your interests in finance analysis and crypto analytics, 
+            you could add features such as stock tickers or crypto price trackers 
+            in the future using various APIs.<br><br>
+            If you're looking to add more complex functionalities, 
+            you can start learning about server-side programming languages like 
+            Python, PHP, or Node.js. These skills would be particularly useful 
+            for your goal of analyzing stocks and cryptocurrency.</p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
+
